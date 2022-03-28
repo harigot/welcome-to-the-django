@@ -45,7 +45,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         {% if user.is_authenticated %}
-                        <a Class='navnar-brand'>Hi {{name}}</a>
+                        <a Class='navnar-brand'>Hi {{user.first_name}}</a>
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="/userpage">My page</a>
                         </li>
