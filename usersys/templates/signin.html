@@ -57,7 +57,38 @@
                 </div>
             </div>
         </nav>
-        <h2>Login</h2>
+    
+
+    <style>
+        .card{
+            box-shadow: 0 16px 48px #E3E7EB;
+        }
+    
+    </style>
+    
+    <!-- Sidebar Widgets Column -->
+    <div class="col-md-4 float">
+    <div class="card my-4">
+            <h5 class="card-header">Login</h5>
+        <div class="card-body">
+            <!-- <p class="card-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis dui interdum arcu elementum commodo. Donec consectetur tincidunt odio et dignissim. Mauris maximus finibus rutrum. Curabitur erat ipsum, rutrum in faucibus. </p>
+            <a href="#"
+               class="btn btn-danger">Know more!</a> -->
+            <form action="" method="post">
+            {% csrf_token %}
+                <label for="">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username">                    <br>
+            
+                <label for="">Password</label>
+                <input type="password" name="password1" id="password1" placeholder="Password">
+                <br>
+
+                <button type="submit" class="btn btn-primary">login</button>
+                </form> 
+        </div>
+    </div>
+    </div>
+    <!-- <h2>Login</h2>
 
     <form action="" method="post">
     {% csrf_token %}
@@ -70,7 +101,7 @@
         <br>
 
         <button type="submit">login</button>
-    </form>
+    </form> -->
 
     <br>
     <br>

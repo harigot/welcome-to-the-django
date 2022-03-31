@@ -1,3 +1,4 @@
+from pickle import FALSE
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_str
@@ -10,6 +11,7 @@ from django.contrib import messages
 from .tokens import generate_token
 from hyperdrated import settings
 from core.models import Post
+
 
 
 def signin(request):
@@ -27,6 +29,7 @@ def signin(request):
             return redirect('signin')
 
     return render(request, 'signin.html')
+
 
 def signup(request):
     if request.method == "POST":
@@ -95,10 +98,12 @@ def signup(request):
 
     return render(request, 'signup.html')
 
+
 def signout(request):
     logout(request)
     messages.success(request, 'You have been logged out')
     return redirect('home')
+
 
 def activate(request, uidb64, token):
     try:
@@ -116,14 +121,16 @@ def activate(request, uidb64, token):
         messages.error(request, 'Activation failed')
         return redirect('home')
 
+
 def publicate(request):
     if request.method == "POST":
         title = request.POST['title']
         content = request.POST['content']
+        image = request.FILES.get('image', False)
         author = request.user
         slug = title.replace(' ', '-')
 
-        blog_post = Post(title=title, slug=slug, content=content, author=author)
+        blog_post = Post(title=title, slug=slug, content=content, author=author, image=image)
         blog_post.save()
         return redirect('home')
 
