@@ -14,6 +14,11 @@
     .card {
         box-shadow: 0 16px 48px #E3E7EB;
     }
+
+    textarea {
+        resize: none;
+    }
+
 </style>
 
 <header class="masthead">
@@ -42,18 +47,23 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
        
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                    <label for="">Title</label>
-                    <input type="text" name="title" id="title" placeholder="title">
-                    <br>
+                <label for="">Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text" name="title" id="title" size="29" placeholder="title">
+                <br>
             
-                    <label for="">Content</label>
-                    <input type="text" name="content" id="content" placeholder="talk about of your hydration source">
-                    <br>
+                <label for="">Content</label>
+                <textarea name="content" id="content" cols="30" rows="10" placeholder="talk about of your hydration source"></textarea>
+                <!-- <input type="text" name="content" id="content" size="40" placeholder="talk about of your hydration source"> -->
+                <br>
+
+                <label for="">Image</label>
+                <input type="file" name="image" id="image" accept="image/png, image/jpeg, image/gif">
+                <br>
             
-                    <button type="submit">post</button>
-                </form>
+                <button type="submit" class="btn btn-primary">post</button>
+            </form>
             
                 <br>
                 <br>

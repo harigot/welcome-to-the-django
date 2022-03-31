@@ -58,7 +58,49 @@
             </div>
         </nav>
         
-        <h2>Sign Up</h2>
+        <style>
+            .card{
+                box-shadow: 0 16px 48px #E3E7EB;
+            }
+        
+        </style>
+        
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-5 float">
+        <div class="card my-4">
+                <h5 class="card-header">Register</h5>
+            <div class="card-body">
+                <!-- <p class="card-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis dui interdum arcu elementum commodo. Donec consectetur tincidunt odio et dignissim. Mauris maximus finibus rutrum. Curabitur erat ipsum, rutrum in faucibus. </p>
+                <a href="#"
+                   class="btn btn-danger">Know more!</a> -->
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <label for="">Username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" name="username" id="username" placeholder="Username">
+                    <br>
+            
+                    <label for="">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" name="fullname" id="fullname" placeholder="Enter your name">
+                    <br>
+            
+                    <label for="">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                    <br>
+                    
+                    <label for="">Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="password" name="password1" id="password1" placeholder="Password">
+                    <br>
+            
+                    <label for="">Password confirmation</label>
+                    <input type="password" name="password2" id="password2" placeholder="repeat your password">
+                    <br>
+    
+                    <button type="submit" class="btn btn-primary">login</button>
+                </form> 
+            </div>
+        </div>
+        </div>
+        <!-- <h2>Sign Up</h2>
 
         <form action="" method="post">
         {% csrf_token %}
@@ -83,7 +125,7 @@
             <br>
     
             <button type="submit">Sign up</button>
-        </form>
+        </form> -->
     
         <br>
         <br>
