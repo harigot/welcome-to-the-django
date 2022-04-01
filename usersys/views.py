@@ -1,4 +1,3 @@
-from pickle import FALSE
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_str
@@ -134,4 +133,4 @@ def publicate(request):
         blog_post.save()
         return redirect('home')
 
-    return render(request, 'user_page.html')
+    return render(request, 'user_page.html', {'user': request.user})

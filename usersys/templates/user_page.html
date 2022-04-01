@@ -78,7 +78,23 @@
                 {% endfor %}
 
         </div>
-        {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+        <style>
+            .card{
+                box-shadow: 0 16px 48px #E3E7EB;
+            }
+    
+        </style>
+    
+        <!-- User Widgets Column -->
+        <div class="col-md-4 float-right ">
+        <div class="card my-4">
+                <h5 class="card-header">{{user.username}}</h5>
+            <div class="card-body">
+                <p class="card-text">Name: {{user.first_name}}<br>E-mail: {{user.email}} </p>
+                <a href="#"class="btn btn-danger">password reset</a>
+            </div>
+        </div>
+        </div>
     </div>
 </div>
 {%endblock%}
