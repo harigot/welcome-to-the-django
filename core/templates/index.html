@@ -51,7 +51,7 @@
                     <img class="card-img-top" src="{{ post.image.url }}">
                     {% endif %}
                     <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    <a href="{{post.slug}}{{post.pk}}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
             </div>
             {% endfor %}
