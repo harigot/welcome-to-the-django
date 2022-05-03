@@ -1,9 +1,10 @@
-from .serializers import UserSerializer
-from django.contrib.auth.models import User
 from rest_framework import viewsets
+from hyperdrated.models import BlogPost
+from .serializers import BlogPostSerializer
 
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class BlogPostviewsets(viewsets.ModelViewSet):
+    queryset = BlogPost.objects.all()
+    serializer_class = BlogPostSerializer
+    pass

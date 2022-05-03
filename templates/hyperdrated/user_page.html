@@ -1,0 +1,89 @@
+{% extends "hyperdrated/base.html" %}
+{% load rest_framework %}
+{% block content %}
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+</style>
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    {% for message in messages %}
+                    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                        <strong>Message:</strong> {{message}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="">Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text" name="title" id="title" size="29" placeholder="title">
+                <br>
+            
+                <label for="">Content</label>
+                <textarea name="content" id="content" cols="30" rows="10" placeholder="talk about of your hydration source"></textarea>
+                <br>
+
+                <label for="">Image</label>
+                <input type="file" name="image" id="image" accept="image/png, image/jpeg, image/gif">
+                <br>
+            
+                <button type="submit" class="btn btn-primary">post</button>
+            </form>
+            
+                <br>
+                <br>
+                <br>
+
+        </div>
+        <style>
+            .card{
+                box-shadow: 0 16px 48px #E3E7EB;
+            }
+    
+        </style>
+    
+        <!-- User Widgets Column -->
+        <div class="col-md-4 float-right ">
+        <div class="card my-4">
+                <h5 class="card-header">{{user.username}}</h5>
+            <div class="card-body">
+                <p class="card-text">Name: {{user.first_name}}<br>E-mail: {{user.email}} </p>
+                <a href="#"class="btn btn-danger">password reset</a>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

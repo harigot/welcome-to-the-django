@@ -1,9 +1,0 @@
-{% autoescape off %}
-
-Hello {{ user.first_name }} {{ user.last_name }}
-
-please confirm your email address by clicking on the following link:
-
-http://{{ domain }}{% url 'activate' uidb64 token %}
-
-{% endautoescape %}

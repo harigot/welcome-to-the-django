@@ -1,8 +1,11 @@
-from rest_framework.routers import DefaultRouter
-from .views import UserViewSet
+from django.urls import path
+from rest_framework import routers
+from .views import BlogPostviewsets
 
 
 
-router = DefaultRouter()
-router.register(r'', UserViewSet)
+app_name = 'hyper_api'
+
+router = routers.DefaultRouter()
+router.register('', BlogPostviewsets, basename='post-list')
 urlpatterns = router.urls
