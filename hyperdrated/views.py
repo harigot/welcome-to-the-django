@@ -10,9 +10,9 @@ from rest_framework.response import Response
 from django.contrib.auth.models import User
 from rest_framework.views import APIView
 from django.shortcuts import redirect
+from .models import BlogPost, Voted
 from django.contrib import messages
 from .tokens import generate_token
-from .models import BlogPost
 from core import settings
 
 
@@ -167,3 +167,39 @@ class UserPage(APIView):
         post = BlogPost.objects.create(title=title, slug=slug, content=content, author=request.user)
         post.save()
         return redirect('hyperdrated:index')
+
+
+def VoteUp(request, pk, slug):
+    if not request.user.is_authenticated:
+        messages.error(request, 'You must be logged in to vote')
+        return redirect('hyperdrated:signin')
+
+    user = request.user
+    post = BlogPost.objects.get(pk=pk, slug=slug)
+
+    if Voted.objects.filter(post=post, user=user, vote=1).exists():
+        messages.error(request, 'You have already voted')
+        return redirect('hyperdrated:post-detail', pk=post.pk, slug=post.slug)
+    else:
+        post.up_vote += 1
+        post.save()
+        Voted.objects.create(post=post, user=user, vote=1)
+        return redirect('hyperdrated:post-detail', pk=post.pk, slug=post.slug)
+
+
+def VoteDown(request, pk, slug):
+    if not request.user.is_authenticated:
+        messages.error(request, 'You must be logged in to vote')
+        return redirect('hyperdrated:signin')
+
+    user = request.user
+    post = BlogPost.objects.get(pk=pk, slug=slug)
+
+    if Voted.objects.filter(post=post, user=user, vote=1).exists():
+        messages.error(request, 'You have already voted')
+        return redirect('hyperdrated:post-detail', pk=post.pk, slug=post.slug)
+    else:
+        post.down_vote += 1
+        post.save()
+        Voted.objects.create(post=post, user=user, vote=1)
+        return redirect('hyperdrated:post-detail', pk=post.pk, slug=post.slug)
