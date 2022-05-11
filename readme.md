@@ -32,3 +32,5 @@ And finally, you just build the image and run the container.<br>
     
   run the image:<br>
     $ docker-compose up
+
+In your browser, type de server with was specified on the terminal. (normally is http://0.0.0.0:8000/)
