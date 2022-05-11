@@ -1,9 +1,9 @@
 <div align="center">
   <h1> Welcome to Hyperdrated  </h1>
-  <h4> Never get thirst again! with hyperhydrate you can see where the nearest public drinking fountain is! </h4>
+  <h4> Never get thirsty again! With Hyperdrate you can locate the nearest public drinking fountain! </h4>
 </div>
 
-This project is a way to demonstrate the skills I'm learning as a web developer. I'm still working on some features and learning a lot on this project (much more than I anticipated), so please feel free to give your feedback, any tips are welcome.
+This project is a way to demonstrate the skills as a programmer and web developer. I'm still working on some features and on this process I'm learning a lot(much more than I anticipated), so please feel free to give your feedback. any tips are welcome.
 ##
 ## how to run this project
 <pre>
