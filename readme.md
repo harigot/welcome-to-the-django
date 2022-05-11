@@ -22,7 +22,13 @@ Now create a directory and clone the project repository.<br>
   
   clone the repository:<br>
     $ git clone https://github.com/harigot/welcome-to-the-django.git<br>
+   
+  enter the repository directory:<br>
+    $ cd welcome-to-the-django<br>
 
 And finally, you just build the image and run the container.<br>
   building docker image:<br>
+    $ docker-compose build<br>
+    
+  run the image:<br>
     $ docker-compose up
