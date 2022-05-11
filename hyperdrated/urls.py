@@ -13,4 +13,6 @@ urlpatterns = [
     path('register/', views.Signup.as_view(), name='signup'),
     path('userpage/', views.UserPage.as_view(), name='userpage'),
     path('activate/<uidb64>/<token>/', views.UserActivate.as_view(), name='activate'),
+    path('<slug:slug><int:pk>/voteup/', views.VoteUp, name='vote-up'),
+    path('<slug:slug><int:pk>/votedown/', views.VoteDown, name='vote-down'),
 ]

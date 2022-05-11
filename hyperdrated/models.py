@@ -8,6 +8,11 @@ STATUS = (
     (1,"Publish")
 )
 
+VOTE_STATUS = (
+    (0,"nope"),
+    (1,"yep")
+)
+
 class BlogPost(models.Model):
     title = models.CharField(max_length=200, unique=True)
     content = models.TextField()
@@ -25,3 +30,9 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Voted(models.Model):
+    post = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    vote = models.IntegerField(choices=VOTE_STATUS, default=0)
