@@ -27,7 +27,7 @@ Create a directory and clone the project repository.
     `$ cd welcome-to-the-django`
 
 And finally, you just build the image and run the container.
- - Build docker image:
+ - Build the docker image:
  
    `$ docker-compose build`
    
