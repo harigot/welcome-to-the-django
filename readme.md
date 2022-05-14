@@ -27,13 +27,9 @@ Create a directory and clone the project repository.
     `$ cd welcome-to-the-django`
 
 And finally, you just build the image and run the container.
- - Build the docker image:
+ - Build and run the docker image:
  
-   `$ docker-compose build`
-   
-- Run the image:
-  
-    `$ docker-compose up`
+   `$ docker-compose up`
 
 In your browser, type de link with was specified on the terminal. (normally is http://0.0.0.0:8000/)
 
